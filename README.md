@@ -268,14 +268,13 @@ pnpm prettier --write .
 
 ### PDF CV Generation
 
-The CV generation feature uses `@react-pdf/renderer` to create professional PDFs on-demand:
+The CV generation feature uses `@react-pdf/renderer` to create professional PDFs on-demand entirely on the client-side:
 
 1. User clicks "Download Resume"
-2. Request sent to `/api/generate-cv`
-3. Server generates PDF with portfolio data
-4. PDF automatically downloads
+2. PDF is generated in the browser using `components/cv-document.tsx`
+3. PDF automatically downloads
 
-**Customize PDF template**: Edit `app/api/generate-cv/route.tsx`
+**Customize PDF template**: Edit `components/cv-document.tsx`
 
 ### Scroll-Snap (V2)
 

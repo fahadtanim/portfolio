@@ -1,4 +1,3 @@
-import { NextRequest, NextResponse } from 'next/server';
 import {
   Document,
   Page,
@@ -6,7 +5,6 @@ import {
   View,
   StyleSheet,
   Image,
-  pdf,
 } from '@react-pdf/renderer';
 import { PortfolioData } from '@/types/portfolio';
 import { formatDate } from '@/lib/utils';
@@ -146,7 +144,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function CVDocument({ data }: { data: PortfolioData }) {
+export function CVDocument({ data }: { data: PortfolioData }) {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -286,26 +284,4 @@ function CVDocument({ data }: { data: PortfolioData }) {
       </Page>
     </Document>
   );
-}
-
-export async function POST(request: NextRequest) {
-  try {
-    const data: PortfolioData = await request.json();
-
-    // eslint-disable-next-line react-hooks/error-boundaries
-    const pdfBlob = await pdf(<CVDocument data={data} />).toBlob();
-
-    return new NextResponse(pdfBlob, {
-      headers: {
-        'Content-Type': 'application/pdf',
-        'Content-Disposition': `attachment; filename="${data.name.replace(/\s+/g, '_')}_CV.pdf"`,
-      },
-    });
-  } catch (error) {
-    console.error('Error generating CV:', error);
-    return NextResponse.json(
-      { error: 'Failed to generate CV' },
-      { status: 500 }
-    );
-  }
 }

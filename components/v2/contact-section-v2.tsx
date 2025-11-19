@@ -5,6 +5,9 @@ import { motion } from 'framer-motion';
 import { Download, Github, Linkedin, Mail } from 'lucide-react';
 import { PortfolioData } from '@/types/portfolio';
 
+import { pdf } from '@react-pdf/renderer';
+import { CVDocument } from '../cv-document';
+
 interface ContactSectionV2Props {
   data: PortfolioData;
 }
@@ -32,19 +35,7 @@ export function ContactSectionV2({ data }: ContactSectionV2Props) {
 
   const generateCV = async () => {
     try {
-      const response = await fetch('/api/generate-cv', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to generate CV');
-      }
-
-      const blob = await response.blob();
+      const blob = await pdf(<CVDocument data={data} />).toBlob();
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;

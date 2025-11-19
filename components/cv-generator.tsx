@@ -3,6 +3,9 @@
 import { Download } from 'lucide-react';
 import { PortfolioData } from '@/types/portfolio';
 
+import { pdf } from '@react-pdf/renderer';
+import { CVDocument } from './cv-document';
+
 interface CVGeneratorProps {
   data: PortfolioData;
 }
@@ -10,19 +13,7 @@ interface CVGeneratorProps {
 export function CVGenerator({ data }: CVGeneratorProps) {
   const generateCV = async () => {
     try {
-      const response = await fetch('/api/generate-cv', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to generate CV');
-      }
-
-      const blob = await response.blob();
+      const blob = await pdf(<CVDocument data={data} />).toBlob();
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
