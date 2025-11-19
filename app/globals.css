@@ -1,26 +1,105 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 10 0 27;
+    --foreground: 226 232 240;
+    --card: 30 41 59;
+    --card-foreground: 226 232 240;
+    --border: 51 65 85;
+    --muted: 51 65 85;
+    --muted-foreground: 148 163 184;
+
+    --neon-blue: 59 130 246;
+    --neon-cyan: 34 211 238;
+    --neon-purple: 168 85 247;
+    --neon-pink: 236 72 153;
+  }
+
+  .dark {
+    --background: 10 0 27;
+    --foreground: 226 232 240;
+    --card: 30 41 59;
+    --card-foreground: 226 232 240;
+    --border: 51 65 85;
+    --muted: 51 65 85;
+    --muted-foreground: 148 163 184;
+
+    --neon-blue: 59 130 246;
+    --neon-cyan: 34 211 238;
+    --neon-purple: 168 85 247;
+    --neon-pink: 236 72 153;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    border-color: rgb(var(--border));
+  }
+
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: rgb(var(--neon-cyan) / 0.3);
+    color: rgb(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow:
+      0 0 10px currentColor,
+      0 0 20px currentColor;
+  }
+
+  .neon-border {
+    border: 1px solid rgb(var(--neon-blue));
+    box-shadow:
+      0 0 10px rgb(var(--neon-blue) / 0.5),
+      inset 0 0 10px rgb(var(--neon-blue) / 0.2);
+  }
+
+  .glass {
+    background: rgb(var(--card) / 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(var(--border) / 0.5);
+  }
+
+  .neon-glow {
+    box-shadow:
+      0 0 20px rgb(var(--neon-blue) / 0.5),
+      0 0 40px rgb(var(--neon-blue) / 0.3),
+      0 0 60px rgb(var(--neon-blue) / 0.2);
+  }
+
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px -10px rgb(var(--neon-blue) / 0.3);
+  }
+
+  /* V2 scroll-snap styles */
+  html.v2-scroll {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: auto;
+  }
+
+  html.v2-scroll section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+  }
 }

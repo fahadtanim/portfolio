@@ -1,0 +1,223 @@
+{
+  "name": "John Doe",
+  "title": "Senior Front-End Engineer",
+  "email": "john.doe@example.com",
+  "phone": "+1 (555) 123-4567",
+  "location": "San Francisco, CA",
+  "website": "https://johndoe.dev",
+  "linkedin": "https://linkedin.com/in/johndoe",
+  "github": "https://github.com/johndoe",
+  "summary": "Passionate front-end engineer with 7 years of experience building high-performance, user-centric web applications. Expert in React, TypeScript, and modern web technologies. Strong focus on performance optimization, accessibility, and creating delightful user experiences.",
+
+  "skills": {
+    "languages": ["JavaScript", "TypeScript", "HTML5", "CSS3", "Python"],
+    "frameworks": ["React", "Next.js", "Vue.js", "Node.js", "Express"],
+    "tools": ["Git", "Webpack", "Vite", "Docker", "Figma"],
+    "libraries": ["Redux", "TailwindCSS", "Framer Motion", "Three.js", "D3.js"],
+    "practices": [
+      "Responsive Design",
+      "Accessibility (WCAG)",
+      "Performance Optimization",
+      "SEO",
+      "Testing (Jest, Cypress)"
+    ]
+  },
+
+  "experience": [
+    {
+      "id": 1,
+      "company": "Tech Innovations Inc.",
+      "position": "Senior Front-End Engineer",
+      "location": "San Francisco, CA",
+      "startDate": "2021-03",
+      "endDate": null,
+      "current": true,
+      "description": "Leading front-end development for enterprise SaaS platform serving 100K+ users.",
+      "achievements": [
+        "Architected and implemented a micro-frontend architecture, reducing deployment time by 60%",
+        "Led migration from JavaScript to TypeScript, improving code quality and developer productivity",
+        "Optimized application performance, achieving 95+ Lighthouse scores across all metrics",
+        "Mentored 5 junior developers and established front-end best practices"
+      ],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "TailwindCSS",
+        "GraphQL"
+      ]
+    },
+    {
+      "id": 2,
+      "company": "Digital Solutions Co.",
+      "position": "Front-End Engineer",
+      "location": "Remote",
+      "startDate": "2019-01",
+      "endDate": "2021-02",
+      "current": false,
+      "description": "Developed responsive web applications for diverse clients across multiple industries.",
+      "achievements": [
+        "Built 15+ production-ready web applications using React and Vue.js",
+        "Implemented comprehensive testing strategy, achieving 85% code coverage",
+        "Reduced bundle size by 40% through code-splitting and lazy loading",
+        "Collaborated with UX team to create accessible, WCAG 2.1 AA compliant interfaces"
+      ],
+      "technologies": ["React", "Vue.js", "JavaScript", "SCSS", "REST API"]
+    },
+    {
+      "id": 3,
+      "company": "StartupXYZ",
+      "position": "Junior Front-End Developer",
+      "location": "New York, NY",
+      "startDate": "2017-06",
+      "endDate": "2018-12",
+      "current": false,
+      "description": "Contributed to building MVP and early-stage product features.",
+      "achievements": [
+        "Developed reusable component library used across 3 product lines",
+        "Implemented responsive designs with pixel-perfect accuracy",
+        "Integrated third-party APIs and payment gateways",
+        "Participated in agile development process and daily standups"
+      ],
+      "technologies": ["JavaScript", "React", "Bootstrap", "jQuery", "Git"]
+    }
+  ],
+
+  "education": [
+    {
+      "id": 1,
+      "institution": "University of California, Berkeley",
+      "degree": "Bachelor of Science",
+      "field": "Computer Science",
+      "startDate": "2013-09",
+      "endDate": "2017-05",
+      "gpa": "3.8",
+      "achievements": [
+        "Dean's List all semesters",
+        "President of Web Development Club",
+        "Completed capstone project on real-time collaborative editing"
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": 1,
+      "name": "E-Commerce Platform",
+      "description": "Full-featured e-commerce platform with real-time inventory management and payment processing.",
+      "image": "/projects/ecommerce.jpg",
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Stripe",
+        "PostgreSQL",
+        "TailwindCSS"
+      ],
+      "liveUrl": "https://demo-ecommerce.example.com",
+      "githubUrl": "https://github.com/johndoe/ecommerce",
+      "featured": true,
+      "highlights": [
+        "Server-side rendering for optimal SEO",
+        "Real-time inventory updates using WebSockets",
+        "Integrated Stripe for secure payment processing",
+        "Achieved 98 Lighthouse performance score"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Task Management Dashboard",
+      "description": "Collaborative task management tool with drag-and-drop interface and real-time updates.",
+      "image": "/projects/taskmanager.jpg",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Firebase",
+        "Framer Motion",
+        "DnD Kit"
+      ],
+      "liveUrl": "https://tasks.example.com",
+      "githubUrl": "https://github.com/johndoe/task-manager",
+      "featured": true,
+      "highlights": [
+        "Real-time collaboration using Firebase",
+        "Smooth drag-and-drop animations",
+        "Responsive design for mobile and desktop",
+        "Dark mode support"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Portfolio Generator",
+      "description": "SaaS tool for developers to create beautiful portfolio websites from JSON data.",
+      "image": "/projects/portfolio-gen.jpg",
+      "technologies": ["Next.js", "React", "TailwindCSS", "MDX", "Vercel"],
+      "liveUrl": "https://portfolio-gen.example.com",
+      "githubUrl": "https://github.com/johndoe/portfolio-generator",
+      "featured": false,
+      "highlights": [
+        "Template system with 10+ pre-built themes",
+        "Export to static HTML/CSS",
+        "SEO optimization built-in",
+        "One-click deployment to Vercel"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Weather Visualization",
+      "description": "Interactive weather data visualization using real-time API data and 3D graphics.",
+      "image": "/projects/weather.jpg",
+      "technologies": [
+        "React",
+        "Three.js",
+        "D3.js",
+        "OpenWeather API",
+        "WebGL"
+      ],
+      "liveUrl": "https://weather-viz.example.com",
+      "githubUrl": "https://github.com/johndoe/weather-viz",
+      "featured": false,
+      "highlights": [
+        "3D globe visualization with Three.js",
+        "Real-time weather data integration",
+        "Interactive charts with D3.js",
+        "Responsive and performant"
+      ]
+    }
+  ],
+
+  "certifications": [
+    {
+      "id": 1,
+      "name": "AWS Certified Developer - Associate",
+      "issuer": "Amazon Web Services",
+      "date": "2022-08",
+      "credentialUrl": "https://aws.amazon.com/verification"
+    },
+    {
+      "id": 2,
+      "name": "Meta Front-End Developer Professional Certificate",
+      "issuer": "Meta (Coursera)",
+      "date": "2021-05",
+      "credentialUrl": "https://coursera.org/verify"
+    }
+  ],
+
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Sarah Johnson",
+      "position": "Engineering Manager",
+      "company": "Tech Innovations Inc.",
+      "text": "John is an exceptional front-end engineer who consistently delivers high-quality work. His attention to detail and passion for creating great user experiences is unmatched.",
+      "avatar": "/testimonials/sarah.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Michael Chen",
+      "position": "Product Designer",
+      "company": "Digital Solutions Co.",
+      "text": "Working with John was a pleasure. He has a great eye for design and always implements pixel-perfect interfaces. His technical expertise and collaborative spirit make him a valuable team member.",
+      "avatar": "/testimonials/michael.jpg"
+    }
+  ]
+}
