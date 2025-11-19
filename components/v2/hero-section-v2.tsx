@@ -52,7 +52,7 @@ export function HeroSectionV2({ data }: HeroSectionV2Props) {
         >
           <div className="relative h-40 w-40 overflow-hidden rounded-full border-4 border-teal-400 shadow-lg shadow-teal-400/50">
             <Image
-              src="/images/Gemini_Generated_Image_i89hyvi89hyvi89h.png"
+              src="./images/Gemini_Generated_Image_i89hyvi89hyvi89h.png"
               alt={data.name}
               fill
               className="object-cover"

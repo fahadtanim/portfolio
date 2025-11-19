@@ -22,7 +22,7 @@ export function Navigation({ data }: NavigationProps) {
       <div>
         <div className="mb-8">
           <Image
-            src="/images/Gemini_Generated_Image_i89hyvi89hyvi89h.png"
+            src="./images/Gemini_Generated_Image_i89hyvi89hyvi89h.png"
             alt={data.name}
             width={150}
             height={150}
