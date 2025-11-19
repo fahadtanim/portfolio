@@ -4,15 +4,16 @@ import { useEffect, useState } from 'react';
 
 export function NavigationDotsV2() {
   const [activeSection, setActiveSection] = useState(0);
-  const [sectionCount] = useState(() => {
-    if (typeof window === 'undefined') return 0;
-    return document.querySelectorAll('section').length;
-  });
+  const [sectionCount, setSectionCount] = useState(0);
 
   useEffect(() => {
     const sections = Array.from(
       document.querySelectorAll('section')
     ) as HTMLElement[];
+
+    setTimeout(() => {
+      setSectionCount(sections.length);
+    }, 0);
 
     const observer = new IntersectionObserver(
       (entries) => {

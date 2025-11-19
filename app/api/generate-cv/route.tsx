@@ -5,6 +5,7 @@ import {
   Text,
   View,
   StyleSheet,
+  Image,
   pdf,
 } from '@react-pdf/renderer';
 import { PortfolioData } from '@/types/portfolio';
@@ -22,21 +23,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#3f4447',
     padding: 30,
     color: '#ffffff',
+    alignItems: 'center',
   },
   sidebarName: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 8,
     color: '#ffffff',
+    textAlign: 'center',
   },
   sidebarTitle: {
     fontSize: 14,
     fontStyle: 'italic',
     marginBottom: 20,
     color: '#d1d5db',
+    textAlign: 'center',
   },
   sidebarSection: {
     marginTop: 25,
+    width: '100%',
   },
   sidebarSectionTitle: {
     fontSize: 14,
@@ -128,6 +133,13 @@ const styles = StyleSheet.create({
     color: '#d1d5db',
     marginBottom: 2,
   },
+  profileImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginBottom: 20,
+    border: '3px solid #ffffff',
+  },
   eduDate: {
     fontSize: 9,
     color: '#9ca3af',
@@ -140,7 +152,12 @@ function CVDocument({ data }: { data: PortfolioData }) {
       <Page size="A4" style={styles.page}>
         {/* Left Sidebar */}
         <View style={styles.sidebar}>
-          <Text style={styles.sidebarName}>{data.name.toUpperCase()}</Text>
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
+          <Image
+            src="https://raw.githubusercontent.com/fahadtanim/portfolio/main/public/images/Gemini_Generated_Image_i89hyvi89hyvi89h.png"
+            style={styles.profileImage}
+          />
+          <Text style={styles.sidebarName}>{data.name}</Text>
           <Text style={styles.sidebarTitle}>{data.title}</Text>
 
           {/* Contact */}
